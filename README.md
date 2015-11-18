@@ -24,8 +24,8 @@ This plugin provides both a new formControlType, `select2`, that allows full con
 select2 via parameter properties with their names prefixed with "select2".
 
 	<param formControlType="select2" label="Select2 tag-style multiple select" name="multi" allowMultiple="true">
+		<property name="select2.placeholder" value="Select an option" />
 		<optionList>
-			<property name="select2.placeholder" value="Select an option" />
 			<option label="John Smith" value="jsmith@company.com" />
 			<option label="Susan Jones" value="sjones@company.com" />
 			<option label="Lucas Davenport" value="ldavenport@company.com" />
@@ -37,8 +37,8 @@ Additionally, it will replace the specific configuration pattern of `formControl
 select2 field.  In these cases, you do not need to specify `allowMutliple="true"`, as it's implied.
 
 	<param formControlType="multiselect" size="1" label="Select2 multiselect" name="single">
+		<property name="select2.placeholder" value="Select an option" />
 		<optionList>
-			<property name="select2.placeholder" value="Select an option" />
 			<option label="John Smith" value="jsmith@company.com" />
 			<option label="Susan Jones" value="sjones@company.com" />
 			<option label="Lucas Davenport" value="ldavenport@company.com" />
