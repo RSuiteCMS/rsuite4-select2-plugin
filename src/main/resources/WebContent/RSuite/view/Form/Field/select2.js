@@ -1,4 +1,7 @@
 (function () {
+    if (RSuite.view.Form.Field.select2) {
+        return;
+    }
     var select2OptionBindings = RSuite.component.Select2.proto().select2OptionBindings,
         UtilitySelect = RSuite.component.Select2.extend(select2OptionBindings.reduce(function (ext, key) {
             ext[key + 'Binding'] = 'model.propertyMap.select2.' + key;
