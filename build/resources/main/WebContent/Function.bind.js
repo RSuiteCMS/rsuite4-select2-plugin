@@ -1,0 +1,34 @@
+// See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
+//  Probably not necessary; we don't necessarily support IE8, which is the only browser for which
+//	this might realistically become a problem.
+if (!Function.prototype.bind) {
+  Object.defineProperty(Function.prototype, {
+    enumerable: false,
+    writable: true,
+    configurable: true,
+    value: function bind(oThis) {
+      if (typeof this !== 'function') {
+        // closest thing possible to the ECMAScript 5
+        // internal IsCallable function
+        throw new TypeError('Function.prototype.bind - what is trying to be bound is not callable');
+      }
+
+      var aArgs   = Array.prototype.slice.call(arguments, 1),
+          fToBind = this,
+          fNOP    = function() {},
+          fBound  = function() {
+            return fToBind.apply(this instanceof fNOP
+                   ? this
+                   : oThis,
+                   aArgs.concat(Array.prototype.slice.call(arguments)));
+          };
+
+      if (this.prototype) {
+        // native functions don't have a prototype
+        fNOP.prototype = this.prototype;
+      }
+      fBound.prototype = new fNOP();
+
+      return fBound;
+    });
+}

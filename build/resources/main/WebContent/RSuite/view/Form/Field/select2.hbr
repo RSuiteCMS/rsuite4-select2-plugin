@@ -1,0 +1,4 @@
+{{#if view.model.label}}{{view RSuite.view.Form.FieldLabel}}{{/if}}
+{{#if view.disclosed}}
+    {{view view.UtilitySelect modelBinding="view.model"}}
+{{/if}}

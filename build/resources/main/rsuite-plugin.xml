@@ -1,0 +1,29 @@
+<rsuite-plugin id="rsuite4-select2-plugin">
+    <extensionProvider id="rsuite.WebService">
+        <staticWebService root="/rsuite4-select2-plugin" path="/WebContent"/>
+    </extensionProvider>
+    <extensionProvider id="rsuite.UI">
+        <!-- Ensures the existence of Function#bind -->
+        <scriptInclude src="/rsuite4-select2-plugin/lib/Function.bind.js" />
+
+        <!-- Provides jQuery.Select2 -->
+        <scriptInclude src="/rsuite4-select2-plugin/lib/jquery/select2.js" />
+        <styleInclude src="/rsuite4-select2-plugin/lib/jquery/select2.min.less" />
+
+        <!-- Creates the RSuite.component namespace so that plugins built against this will be
+            compatible with RS5's implementation -->
+        <scriptInclude src="/rsuite4-select2-plugin/RSuite/component.js" />
+
+        <!-- Provides the Select2 control -->
+        <scriptInclude src="/rsuite4-select2-plugin/RSuite/component/Select2.js" />
+
+        <!-- Provides the mapping from formControlType="multiselect", size="1" to the select2 control -->
+        <scriptInclude src="/rsuite4-select2-plugin/RSuite/view/Form/FieldContainer.ext.js" />
+
+        <!-- Provides formControlType="select2", with appropriate option mapping from propertyMap.select2.* -->
+        <scriptInclude src="/rsuite4-select2-plugin/RSuite/view/Form/Field/select2.js" />
+
+        <!-- Provides particular styling for the select2 formControlType -->
+        <styleInclude src="/rsuite4-select2-plugin/RSuite/view/Form/Field/select2.less" />
+    </extensionProvider>
+</rsuite-plugin>
