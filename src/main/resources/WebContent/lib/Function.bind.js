@@ -21,7 +21,7 @@ if (!Function.prototype.bind) {
 
     if (this.prototype) {
       // native functions don't have a prototype
-      fNOP.prototype = this.prototype; 
+      fNOP.prototype = this.prototype;
     }
     fBound.prototype = new fNOP();
 
