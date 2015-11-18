@@ -4,7 +4,9 @@
     }
     var select2OptionBindings = RSuite.component.Select2.proto().select2OptionBindings,
         UtilitySelect = RSuite.component.Select2.extend(select2OptionBindings.reduce(function (ext, key) {
-            ext[key + 'Binding'] = 'model.propertyMap.select2.' + key;
+            if (!ext[key + 'Binding'] && !ext[key]) {
+                ext[key + 'Binding'] = 'model.propertyMap.select2.' + key;
+            }
             return ext;
         }, {
             idBinding: "fieldId",
