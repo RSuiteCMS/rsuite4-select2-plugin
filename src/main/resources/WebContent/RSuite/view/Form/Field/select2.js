@@ -8,7 +8,7 @@
         disclosed: true,
         // Select2 handles the change events just fine; no need to use RSuite's defaults.
         change: null,
-        UtilitySelect: UtilitySelect: RSuite.component.Select2.extend(
+        UtilitySelect: RSuite.component.Select2.extend(
             RSuite.component.Select2.proto().select2OptionBindings.reduce(
                 function (ext, key) {
                     if (!ext[key + 'Binding'] && !ext[key]) {
