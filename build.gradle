@@ -10,6 +10,8 @@ apply from: 'http://ivy.reallysi.com/ivy-repo/repositories-std-include.gradle'
 jar.baseName = "rsuite4-select2";
 
 
+processResources.ext.resourceFilterTokens.ext.pluginId = 'rsuite-select2-plugin-master';
+
 dependencies {
 	compile('rsi:rsuite-api:4.1.11') {
 		transitive = false;
